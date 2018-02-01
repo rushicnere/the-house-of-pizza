@@ -1,6 +1,6 @@
 'use strict';
 
-app.service('Order', function ($rootScope, $http) {
+app.service('Order', function ($rootScope, $http, $location) {
 	var self = {};
 
 	self.total = 0; // total of all ordered pizzas
@@ -63,26 +63,32 @@ app.service('Order', function ($rootScope, $http) {
 				self.time = data.time;
 			});
 		}
+		self.clear();//this is added as local web server is not returning the response
+		self.time = '60';//this is added as local web server is not returning the response
 	};
 
-	createPersistentProperty('cart', 'fmCart', Array);
-	createPersistentProperty('total', 'fmTotal', Number);
+	//Commented below function as it restricts the values to be changed on page refresh
+    //as local storage doesn't change after normal refresh.
+    // It changes on hard refresh or on emptying cache.
 
-	function createPersistentProperty(localName, storageName, Type) {
-		var json = localStorage[storageName];
+    //createPersistentProperty('cart', 'fmCart', Array);
+	//createPersistentProperty('total', 'fmTotal', Number);
 
-		self[localName] = json ? JSON.parse(json) : new Type;
-
-		$rootScope.$watch(
-			function () {
-				return self[localName];
-			},
-			function (value) {
-				localStorage[storageName] = JSON.stringify(value);
-			},
-			true
-		);
-	}
+	// function createPersistentProperty(localName, storageName, Type) {
+	// 	var json = localStorage[storageName];
+    //
+	// 	self[localName] = json ? JSON.parse(json) : new Type;
+    //
+	// 	$rootScope.$watch(
+	// 		function () {
+	// 			return self[localName];
+	// 		},
+	// 		function (value) {
+	// 			localStorage[storageName] = JSON.stringify(value);
+	// 		},
+	// 		true
+	// 	);
+	// }
 
 	return self;
 });
