@@ -1,0 +1,24 @@
+{
+  "name": "houseofpizza",
+  "version": "0.1.0",
+  "authors": [
+    "Rushikesh Nere <rushicnere@gmail.com>"
+  ],
+  "description": "The Pizza Ordering App",
+  "license": "None",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.0-rc.3",
+    "angular-route": "1.2.0-rc.3",
+    "angular-resource": "1.2.0-rc.3",
+    "bootstrap": "~3.0.0",
+    "html5shiv": "~3.7.0",
+    "respond": "~1.3.0"
+  }
+}

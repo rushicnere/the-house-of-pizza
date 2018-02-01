@@ -1,0 +1,23 @@
+body {
+	min-height: 2000px;
+	padding-top: 70px;
+}
+
+.price, .total {
+	font-size: 24px;
+	line-height: 1.1;
+	text-align: right;
+}
+
+.total {
+	margin-top: 3px;
+}
+
+h3 .label {
+	font-size: 12px;
+}
+
+.validation-info {
+	padding-top: 7px;
+}
+

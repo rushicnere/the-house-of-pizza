@@ -1,0 +1,51 @@
+[
+	{
+		"id": 1,
+		"name": "Margherita",
+		"price": 90,
+		"vege": true,
+		"content": ["tomato base", "mozzarella cheese", "basil"]
+	},
+	{
+		"id": 2,
+		"name": "Chicken Pepperoni",
+		"price": 110,
+		"vege": false,
+		"content": ["tomato base", "mozzarella cheese", "ham"]
+	},
+	{
+		"id": 3,
+		"name": "Veggie Feast",
+		"price": 120,
+		"vege": true,
+		"content": ["tomato base", "mozzarella cheese", "mushrooms"]
+	},
+	{
+		"id": 4,
+		"name": "Triple Chicken Feast",
+		"price": 150,
+		"vege": false,
+		"content": ["tomato base", "mozzarella cheese", "ham", "pineapple"]
+	},
+	{
+		"id": 5,
+		"name": "Chicken Italiano",
+		"price": 175,
+		"vege": false,
+		"content": ["tomato base", "mozzarella cheese", "ham", "asparagus", "olives"]
+	},
+	{
+		"id": 6,
+		"name": "Paneer Vegorama",
+		"price": 200,
+		"vege": true,
+		"content": ["tomato base", "broccoli", "paneer", "cherry tomatoes", "corn", "olives"]
+	},
+	{
+		"id": 7,
+		"name": "Chicken Tikka",
+		"price": 250,
+		"vege": false,
+		"content": ["tomato base", "mozzarella cheese", "tuna", "onion", "olives"]
+	}
+]

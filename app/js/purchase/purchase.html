@@ -1,0 +1,67 @@
+
+<div class="alert alert-warning" ng-show="order.time">
+	<a class="close" href="#" ng-click="order.time = 0">&times;</a>
+	<h3>Wohooo!</h3>
+	<p>Your pizza will arrive within {{order.time}} minutes.</p>
+	<p>
+		<a class="btn btn-default btn-lg" href="#/">Place New Order</a>
+	</p>
+</div>
+
+<div ng-hide="order.time">
+	<h1>Provide Contact Details</h1>
+	<form class="form-horizontal" name="form" novalidate>
+		<div class="form-group">
+			<label for="name" class="col-lg-2 control-label">Name</label>
+
+			<div class="col-lg-6">
+				<input type="text" ng-model="order.user.name" id="name" name="name"
+				       autofocus required class="form-control"
+				       placeholder="Set your name">
+			</div>
+			<div class="col col-lg-4 validation-info">
+			<span ng-show="form.name.$error.required" class="text-danger">
+				<span class="glyphicon glyphicon-remove-circle"></span>
+				Mandatory
+			</span>
+			<span ng-show="!form.name.$error.required" class="text-success">
+				<span class="glyphicon glyphicon-ok-circle"></span>
+				Ok
+			</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="address" class="col-lg-2 control-label">Address</label>
+
+			<div class="col-lg-6">
+				<input type="text" ng-model="order.user.address" id="address" name="address"
+				       required ng-minlength="7" class="form-control"
+				       placeholder="street, city">
+			</div>
+			<div class="col col-lg-4 validation-info">
+			<span ng-show="form.address.$error.required" class="text-danger">
+				<span class="glyphicon glyphicon-remove-circle"></span>
+				Mandatory
+			</span>
+			<span ng-show="form.address.$error.minlength" class="text-warning">
+				<span class="glyphicon glyphicon-remove-circle"></span>
+				Too Short
+			</span>
+			<span ng-show="!form.address.$error.required && !form.address.$error.minlength" class="text-success">
+				<span class="glyphicon glyphicon-ok-circle"></span>
+				Ok
+			</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-lg-offset-2 col-lg-10">
+				<button type="submit" class="btn btn-primary btn-lg"
+				        ng-disabled="form.$invalid"
+				        ng-click="order.purchase()">Place order
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,35 @@
+<div class="panel panel-success">
+	<div class="panel-heading">
+		Choose pizza to order
+	</div>
+	<div class="panel-body">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default" ng-class="{disabled: search === null}" ng-click="search = null">All</button>
+			<button type="button" class="btn btn-success" ng-class="{disabled: search.vege === true}" ng-click="search.vege = true">Veg.</button>
+			<button type="button" class="btn btn-danger" ng-class="{disabled: search.vege === false}" ng-click="search.vege = false">Non Veg.</button>
+		</div>
+		<hr/>
+		<div ng-repeat="pizza in list | filter: search">
+			<div class="pull-right">
+				<div class="price">₹{{pizza.price}}</div>
+				<button type="button" ng-click="order.add(pizza)"
+				        class="btn btn-success">
+					Add to cart
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
+			</div>
+			<h3>
+				{{pizza.name}}
+				<span class="label label-success" ng-show="pizza.vege">Veg.</span>
+				<span class="label label-danger" ng-show="!pizza.vege">Non Veg.</span>
+			</h3>
+
+			<p>
+				<span ng-repeat="item in pizza.content">{{item}}<span ng-hide="$last">, </span></span>
+			</p>
+			<hr ng-hide="$last"/>
+		</div>
+	</div>
+</div>
+
+
