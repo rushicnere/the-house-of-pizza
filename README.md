@@ -59,3 +59,4 @@ For demo run below commands in given sequence:
 npm install -g http-server
 http-server -o
 ```
+Important Note: In case of demo failure, please check the bower folder in the project directory. If it includes a directory named 'bower_components', rename it to 'bower'
