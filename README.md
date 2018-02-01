@@ -53,3 +53,9 @@ Confirm if grunt is installed using below command:
 grunt --version
 grunt
 ```
+For demo run below commands in given sequence:
+
+```
+npm install -g http-server
+http-server -o
+```
